@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.9624cecb.css",
-    "main.js": "/static/js/main.c47259fe.js",
-    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.c47d8f916cd4fefe052017a0ba652b02.svg",
-    "static/media/background.jpg": "/static/media/background.7af2214e9a5664c11ffe.jpg",
-    "index.html": "/index.html",
-    "main.9624cecb.css.map": "/static/css/main.9624cecb.css.map",
-    "main.c47259fe.js.map": "/static/js/main.c47259fe.js.map",
-    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/lipreading-frontend/static/css/main.7924afec.css",
+    "main.js": "/lipreading-frontend/static/js/main.58104657.js",
+    "static/js/787.28cb0dcd.chunk.js": "/lipreading-frontend/static/js/787.28cb0dcd.chunk.js",
+    "static/media/logo.svg": "/lipreading-frontend/static/media/logo.c47d8f916cd4fefe052017a0ba652b02.svg",
+    "static/media/background.jpg": "/lipreading-frontend/static/media/background.7af2214e9a5664c11ffe.jpg",
+    "index.html": "/lipreading-frontend/index.html",
+    "main.7924afec.css.map": "/lipreading-frontend/static/css/main.7924afec.css.map",
+    "main.58104657.js.map": "/lipreading-frontend/static/js/main.58104657.js.map",
+    "787.28cb0dcd.chunk.js.map": "/lipreading-frontend/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9624cecb.css",
-    "static/js/main.c47259fe.js"
+    "static/css/main.7924afec.css",
+    "static/js/main.58104657.js"
   ]
 }
