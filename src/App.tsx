@@ -1,7 +1,7 @@
 import {useEffect,useState,useRef,useCallback} from 'react'
 import './App.css';
 import axios from 'axios'
-import { Route,BrowserRouter,Routes,Link,Navigate} from 'react-router-dom';
+import { Route,BrowserRouter,Routes,Link,Navigate, HashRouter} from 'react-router-dom';
 import Main from './Main';
 import Register from './register';
 import Login from './login';
@@ -41,7 +41,7 @@ const Page=()=>{
 
 const App=()=>{
   return(
-    <BrowserRouter>
+    <HashRouter>
     <div className='APP'>
     <Routes>
         <Route path="/" element={<Login/>}/ >
@@ -51,7 +51,7 @@ const App=()=>{
       <Route path="/UserInfo" element={<UserInfo/>}/>
       </Routes>
       </div>
-      </BrowserRouter>
+      </HashRouter>
 
   );
 }
