@@ -12,29 +12,9 @@ const Register = () => {
   const [password, set_password] = useState("");
   const [RegOn, set_RegOn] = useState(false);
   useEffect(() => {
-    // let username='zhsy1234'
-    // let password='123456'
-    // console.log(loginOn);
     if (RegOn) {
       //判断按钮是否按下
       set_suc(true);
-      //         let res=fetch(`http://region-11.autodl.com:14399/reigster?name=${name}&password=${password}`,
-      // {method:'POST', headers:{accept:'application/json'}}).then(
-      //   (res)=>{
-      //     console.log(res);
-      //     res.json().then((data)=>{
-      //       console.log(data)
-      //       if(data.success){
-      //         set_suc(true)
-      //       }
-      //     })
-      //   }
-
-      // .catch((e)=>{console.log(e)});
-      //   let res=fetch('http://region-11.autodl.com:14399/login',
-      // {method:'POST',body:JSON.stringify({'username':'zhsy','password':'123456'})}).then((res)=>{console.log(res.status);console.log('ggg')});
-      // route.current='/'
-      // set_RegOn(false)
     }
   }, [RegOn, set_RegOn, name, password, set_suc]);
   useEffect(() => {
