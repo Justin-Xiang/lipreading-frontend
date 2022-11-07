@@ -236,20 +236,17 @@ const Main = () => {
             </div>
 
             <div className="result">
-              <div className="result_1">
-                <div className="label">
-                  <p>正确文本</p>
-                </div>
-                <div className="wenbenkuang">
-                  {txt[parseInt(value) - 1] || "请选择文件"}
-                </div>
+              <div className="label">
+                <p>正确文本</p>
               </div>
-              <div className="result_2">
-                <div className="label">
-                  <p>识别结果</p>
-                </div>
-                <div className="wenbenkuang">{fileName}</div>
+              <div className="wenbenkuang">
+                {txt[parseInt(value) - 1] || "请选择文件"}
               </div>
+
+              <div className="label">
+                <p>识别结果</p>
+              </div>
+              <div className="wenbenkuang">{fileName}</div>
             </div>
           </div>
 
