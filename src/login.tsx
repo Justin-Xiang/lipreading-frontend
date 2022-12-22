@@ -49,7 +49,7 @@ const Login = () => {
       <body>
         <div className="container">
           <div className="logo">
-            <img src={logo} />
+            <img src={logo} alt="logo" />
           </div>
           <div className="login-form">
             <form action="">
@@ -73,7 +73,7 @@ const Login = () => {
 
               <button type="submit" id="btn">
                 <Link to={"/register"} state={{ usr: username }}>
-                  注册为新用户
+                  新用户?点此注册
                 </Link>
               </button>
 
@@ -86,7 +86,7 @@ const Login = () => {
                 }}
               >
                 <Link to={nav} state={{ usr: username }}>
-                  确认登陆
+                  登陆
                 </Link>
               </button>
             </form>

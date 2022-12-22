@@ -5,6 +5,7 @@ import { txt } from "./txt";
 import "./Main.css";
 
 import logo from "./logo.svg";
+
 const Main = () => {
   //使用webRTC:
   //创建数据源
@@ -160,6 +161,11 @@ const Main = () => {
     [success, on] //将事件与sucess和on进行绑定,当sucess或者on进行重新渲染
     //的时候执行
   );
+  function handleClick() {
+    if (window.confirm("你确定要退出吗?")) {
+      window.location.href = "http://localhost:3000/";
+    }
+  }
   return (
     <>
       <head>
@@ -196,9 +202,8 @@ const Main = () => {
 
           <div className="info header_item">
             <p>欢迎，{window.history.state.usr.usr}！</p>
-            <button>
-              <Link to="/">退出</Link>
-            </button>
+
+            <button onClick={handleClick}> 退出</button>
           </div>
         </div>
 

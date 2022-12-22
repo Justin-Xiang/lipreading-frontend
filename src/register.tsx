@@ -11,6 +11,9 @@ const Register = () => {
   const [nav, set_nav] = useState("/register");
   const [password, set_password] = useState("");
   const [RegOn, set_RegOn] = useState(false);
+  const passwordIsValid = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,16}$/.test(
+    password
+  );
   useEffect(() => {
     if (RegOn) {
       //判断按钮是否按下
@@ -68,6 +71,11 @@ const Register = () => {
                   set_password(e.target.value);
                 }}
               />
+              {passwordIsValid ? (
+                <p style={{ color: "green" }}>这个密码可以！</p>
+              ) : (
+                <p style={{color: 'red'}}>密码太简单啦！</p>
+              )}
               <div className="item">
                 您的性别:
                 <label className="radio-item">
@@ -103,6 +111,7 @@ const Register = () => {
               >
                 <NavLink to={nav}>确认注册</NavLink>
               </button>
+
               <div className="signUp">
                 <a href="/">登录账号</a>
               </div>
