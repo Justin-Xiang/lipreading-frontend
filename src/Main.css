@@ -80,6 +80,7 @@ body {
     flex-direction: row;
 	align-items: center;
     justify-content: center;
+    margin-left: 30px;
 }
 
 /* content */
@@ -260,9 +261,16 @@ text-decoration: none;
     font-family: Arial;
     color: #ffffff;
     font-size: 20px;
+    width: 120px;
 }
 
 .info {
     text-align: right;
     margin-right: 50px;
+}
+
+.notice{
+    text-align: center;
+    color:yellow;
+    font-size: 25px;
 }

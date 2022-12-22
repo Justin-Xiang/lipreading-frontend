@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { txt } from "./txt";
+import { txt, pinyin } from "./txt";
 import "./Main.css";
-
 import logo from "./logo.svg";
 
 const Main = () => {
@@ -180,7 +179,7 @@ const Main = () => {
           <div className="logo_Main header_item">
             <img src={logo} style={{ width: "200px", height: "100px" }} />
           </div>
-
+          <div className="notice">视频可以选择倍速播放哦</div>
           <div className="header_item" id="snow">
             <div className="select_video">请选择视频：</div>
             <div className="list">
@@ -210,6 +209,15 @@ const Main = () => {
         <div className="content wrapper">
           <div className="middle">
             <div className="all_video">
+              {/* 左上/原始的video */}
+              <video
+                controls
+                autoPlay
+                src={process.env.PUBLIC_URL + `/origin/1.webm`}
+                width="480"
+                height="360"
+              ></video>
+              {/* 左下/用户录制的video */}
               <video
                 controls
                 autoPlay
@@ -217,18 +225,10 @@ const Main = () => {
                 width="480"
                 height="360"
               ></video>
-              <video controls width="480" height="360"></video>
             </div>
 
             <div className="lip_video">
-              <video
-                controls
-                autoPlay
-                src={src}
-                width="360"
-                height="360"
-              ></video>
-
+              {/* 右上/原始的唇部区域video */}
               <video
                 controls
                 src={
@@ -238,18 +238,26 @@ const Main = () => {
                 width="360"
                 height="360"
               ></video>
+              {/* 右下/用户的唇部区域video */}
+              <video controls width="360" height="360"></video>
             </div>
 
             <div className="result">
               <div className="label">
-                <p>正确文本</p>
+                <p style={{ textAlign: "center" }}>正确文本</p>
               </div>
               <div className="wenbenkuang">
-                {txt[parseInt(value) - 1] || "请选择文件"}
+                <p style={{ textAlign: "center" }}>
+                  {pinyin[parseInt(value) - 1] || "请选择文件"}
+                </p>
+                <br />
+                <p style={{ textAlign: "center" }}>
+                  {txt[parseInt(value) - 1] || "请选择文件"}
+                </p>
               </div>
 
               <div className="label">
-                <p>识别结果</p>
+                <p style={{ textAlign: "center" }}>识别结果</p>
               </div>
               <div className="wenbenkuang">{fileName}</div>
             </div>

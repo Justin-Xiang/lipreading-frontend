@@ -86,7 +86,7 @@ const Login = () => {
                 }}
               >
                 <Link to={nav} state={{ usr: username }}>
-                  登陆
+                  登录
                 </Link>
               </button>
             </form>
