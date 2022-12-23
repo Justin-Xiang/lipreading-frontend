@@ -282,25 +282,13 @@ const Main = () => {
 
             <div className="left_item">
               <button
-                className="begin"
+                className={on ? "end" : "begin"}
                 style={{ height: "80px", width: "80px" }}
                 onClick={() => {
-                  seton(true);
+                  seton(!on);
                 }}
               >
-                开始录制
-              </button>
-            </div>
-
-            <div className="left_item">
-              <button
-                className="end"
-                style={{ height: "80px", width: "80px" }}
-                onClick={() => {
-                  seton(false);
-                }}
-              >
-                结束录制
+                {on ? "停止录制" : "开始录制"}
               </button>
             </div>
           </div>
@@ -326,15 +314,15 @@ const Main = () => {
           </div>
         </div>
         <div className="footer">
-        <button
-          className="save"
-          style={{ height: "80px", width: "80px" }}
-          onClick={() => {
-            setdload(true);
-          }}
-        >
-          下载视频
-        </button>
+          <button
+            className="save"
+            style={{ height: "80px", width: "80px" }}
+            onClick={() => {
+              setdload(true);
+            }}
+          >
+            下载视频
+          </button>
         </div>
 
         <div className="footer">关于我们————金蝉子团队</div>
