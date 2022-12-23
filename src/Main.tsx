@@ -308,7 +308,7 @@ const Main = () => {
                 className="fankui"
                 style={{ height: "80px", width: "80px" }}
               >
-                反馈
+                <Link to={"/page"}>反馈</Link>
               </button>
             </div>
           </div>
