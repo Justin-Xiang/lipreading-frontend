@@ -115,8 +115,10 @@ const Main = () => {
     // console.log(blob)
     if (dload) {
       //启动下载状态
+
       if (blob.current) {
         //blob不为空
+
         let url = URL.createObjectURL(blob.current);
         let linkElement = document.createElement("a"); // 创建点击下载的元素,会默认使用
         linkElement.setAttribute("href", url);
@@ -244,7 +246,7 @@ const Main = () => {
 
             <div className="result">
               <div className="label">
-                <p style={{ textAlign: "center" }}>正确文本</p>
+                <p>正确文本</p>
               </div>
               <div className="wenbenkuang">
                 <p style={{ textAlign: "center" }}>
@@ -257,7 +259,7 @@ const Main = () => {
               </div>
 
               <div className="label">
-                <p style={{ textAlign: "center" }}>识别结果</p>
+                <p>识别结果</p>
               </div>
               <div className="wenbenkuang">{fileName}</div>
             </div>
@@ -266,7 +268,7 @@ const Main = () => {
           <div className="left">
             <div className="left_item"></div>
 
-            <div className="left_item">
+            {/* <div className="left_item">
               <button
                 className="save"
                 style={{ height: "80px", width: "80px" }}
@@ -276,7 +278,7 @@ const Main = () => {
               >
                 下载视频
               </button>
-            </div>
+            </div> */}
 
             <div className="left_item">
               <button
@@ -307,7 +309,7 @@ const Main = () => {
             <div className="right_item">
               <button
                 className="shouce"
-                style={{ height: "80px", width: "40px" }}
+                style={{ height: "80px", width: "80px" }}
               >
                 使用手册
               </button>
@@ -316,12 +318,23 @@ const Main = () => {
             <div className="right_item">
               <button
                 className="fankui"
-                style={{ height: "80px", width: "40px" }}
+                style={{ height: "80px", width: "80px" }}
               >
                 反馈
               </button>
             </div>
           </div>
+        </div>
+        <div className="footer">
+        <button
+          className="save"
+          style={{ height: "80px", width: "80px" }}
+          onClick={() => {
+            setdload(true);
+          }}
+        >
+          下载视频
+        </button>
         </div>
 
         <div className="footer">关于我们————金蝉子团队</div>
