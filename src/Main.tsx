@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { txt, pinyin } from "./txt";
 import "./Main.css";
 import logo from "./logo.svg";
+import { Popup } from "@fluentui/react";
 
 const Main = () => {
   //使用webRTC:
@@ -28,6 +29,19 @@ const Main = () => {
   const [dload, setdload] = useState(false); //此变量控制录制视频的下载
   const [src, setSrc] = useState("");
   const [fileName, setFileName] = useState("");
+  const [showPopup, setShowPopup] = useState(false); //弹窗
+  const [inputValue, setInputValue] = useState(""); //反馈意见
+  function handleButtonClick() {
+    setShowPopup(true);
+  }
+
+  function handleCloseButtonClick() {
+    setShowPopup(false);
+  }
+
+  function handleInputChange(event) {
+    setInputValue(event.target.value);
+  }
   const success = useCallback((stream: MediaStream) => {
     media.current = stream.getTracks()[0]; //获得第0个轨道的视频流
     recoder.current = new MediaRecorder(stream); //传入视频流进行录制
@@ -307,9 +321,34 @@ const Main = () => {
               <button
                 className="fankui"
                 style={{ height: "80px", width: "80px" }}
+                onClick={handleButtonClick}
               >
-                <Link to={"/page"}>反馈</Link>
+                反馈
               </button>
+              {showPopup && (
+                <div className="popup">
+                  <p style={{ textAlign: "center", fontSize: "40px" }}>
+                    如有意见，请反馈至邮箱xxx@xxx.com
+                  </p>
+                  <textarea
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    style={{
+                      height: "60%",
+                      width: "80%",
+                    }}
+                  />
+                  <div style={{ textAlign: "center" }}>
+                    <button
+                      style={{ backgroundColor: "red" }}
+                      onClick={handleCloseButtonClick}
+                    >
+                      关闭
+                    </button>
+                    <button onClick={handleCloseButtonClick}>提交</button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
